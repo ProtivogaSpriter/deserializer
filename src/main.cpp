@@ -18,5 +18,4 @@ int main() {
 	
 	//write deserialized
 	dw.write_deserialized();
-	//damn i'm good.
 }

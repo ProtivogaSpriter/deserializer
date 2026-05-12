@@ -37,7 +37,7 @@ Deserializer::Deserializer(ifstream ifile_new){
 pair<string, int64_t> Deserializer::deserialize_string(string data){
 	//read from end until first semicolon, locate it in space
 	//memcpy the string before the semicolon
-	//cast to int, save to vector in here
+	//cast the rest to int
 	uint64_t seperator_idx = data.rfind(";", data.size());
 	string data_string(seperator_idx + 1, 0);
 	memcpy(data_string.data(), data.data(), seperator_idx);
@@ -64,7 +64,6 @@ vector<string> Deserializer::into_lines(){
 
 //takes the ifile and deserialzes it, turning text into data
 ListNode* Deserializer::deserialize() {
-	//...eugh.
 	vector<string> lines = into_lines();
 	vector<int64_t> rands;
 	vector<ListNode*> collection;
